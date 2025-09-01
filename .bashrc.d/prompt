@@ -1,0 +1,7 @@
+source $HOME/.git-prompt.sh
+
+GIT_PS1_SHOWCOLORHINTS=yes
+
+#export PS1='[\u@t14g4 \W$(__git_ps1 " (%s)")]\$ '
+export PS1='[\u@t14g4 $(basename $(dirname $(pwd)))/\W$(__git_ps1 " (%s)")]\$ '
+
