@@ -1,0 +1,5 @@
+# This will disable Alt+R
+"\er": nop
+
+# Stop Flashing on Windows Terminal
+set bell-style none
