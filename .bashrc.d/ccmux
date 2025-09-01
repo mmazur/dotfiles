@@ -1,0 +1,4 @@
+source $HOME/dev/ccmux/bash_completion.sh
+
+alias cm=ccmux
+complete -F _ccmux_completion cm
