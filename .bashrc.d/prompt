@@ -5,6 +5,6 @@ GIT_PS1_SHOWCOLORHINTS=yes
 if [ "$HOSTNAME" = "mmazur-thinkpadt14gen4.rmtpl.csb" ]; then
 	export PS1='[\u@t14g4 $(basename $(dirname $(pwd)))/\W$(__git_ps1 " (%s)")]\$ '
 else
-	export PS1='[\u@h $(basename $(dirname $(pwd)))/\W$(__git_ps1 " (%s)")]\$ '
+	export PS1='[\u@\h $(basename $(dirname $(pwd)))/\W$(__git_ps1 " (%s)")]\$ '
 fi
 
