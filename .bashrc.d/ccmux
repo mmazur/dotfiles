@@ -1,4 +1,6 @@
-source $HOME/dev/ccmux/bash_completion.sh
+if [ -d $HOME/dev/ccmux ]; then
+	source $HOME/dev/ccmux/bash_completion.sh
 
-alias cm=ccmux
-complete -F _ccmux_completion cm
+	alias cm=ccmux
+	complete -F _ccmux_completion cm
+fi
