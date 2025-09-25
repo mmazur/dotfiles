@@ -5,6 +5,7 @@
   "permissions": {
     "allow": [
       "Bash(jq:*)",
+      "Bash(git checkout:*)",
       "Bash(git log:*)",
       "Bash(git show:*)",
       "Bash(git rev-list:*)",
