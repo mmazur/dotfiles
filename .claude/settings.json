@@ -4,20 +4,20 @@
   },
   "permissions": {
     "allow": [
-      "Bash(jq)",
-      "Bash(git log)",
-      "Bash(git show)",
-      "Bash(git rev-list)",
-      "Bash(gh pr view)",
-      "Bash(gh pr list)", 
-      "Bash(gh issue view)",
-      "Bash(gh repo view)",
-      "Bash(kubectl get)",
-      "Bash(kubectl describe)",
-      "Bash(oc get)",
-      "Bash(oc describe)",
-      "Bash(find . *)",
-      "Bash(find ./*)"
+      "Bash(jq:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git rev-list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)", 
+      "Bash(gh issue view:*)",
+      "Bash(gh repo view:*)",
+      "Bash(kubectl get:*)",
+      "Bash(kubectl describe:*)",
+      "Bash(oc get:*)",
+      "Bash(oc describe:*)",
+      "Bash(find . :*)",
+      "Bash(find ./:*)"
     ]
   }
 }
