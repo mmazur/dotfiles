@@ -1,7 +1,4 @@
 {
-  "feedbackSurveyState": {
-    "lastShownTime": 1754057532483
-  },
   "permissions": {
     "allow": [
       "Bash(jq:*)",
@@ -10,7 +7,7 @@
       "Bash(git show:*)",
       "Bash(git rev-list:*)",
       "Bash(gh pr view:*)",
-      "Bash(gh pr list:*)", 
+      "Bash(gh pr list:*)",
       "Bash(gh issue view:*)",
       "Bash(gh repo view:*)",
       "Bash(kubectl get:*)",
@@ -20,5 +17,21 @@
       "Bash(find . :*)",
       "Bash(find ./:*)"
     ]
+  },
+  "model": "claude-sonnet-4-6",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "safety-net@cc-marketplace": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
+  },
+  "alwaysThinkingEnabled": true,
+  "feedbackSurveyState": {
+    "lastShownTime": 1754057532483
   }
 }
