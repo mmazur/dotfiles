@@ -1,3 +1,3 @@
-if [ "$MSYSTEM" = "MSYS" ]; then
+if [ -n "$MSYSTEM" ]; then
     export PATH="/c/Program Files (x86)/GnuWin32/bin:$PATH"
 fi
