@@ -8,5 +8,12 @@ else
 	MYHOSTNAME=$HOSTNAME
 fi
 
-export PS1='[\u@$MYHOSTNAME $(basename $(dirname $(pwd)))/\W$(__git_ps1 " (%s)")]\$ '
+[ -z "$USER" ] && export USER=$USERNAME
+
+if [ "$USER" == "vault" ]; then
+	# Make it RED
+	export PS1='[\[\e[31m\]\u@$MYHOSTNAME\[\e[0m\] $(basename $(dirname $(pwd)))/\W$(__git_ps1 " (%s)")]\$ '
+else
+	export PS1='[\u@$MYHOSTNAME $(basename $(dirname $(pwd)))/\W$(__git_ps1 " (%s)")]\$ '
+fi
 
