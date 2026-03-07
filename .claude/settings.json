@@ -26,6 +26,15 @@
   "enabledPlugins": {
     "safety-net@cc-marketplace": true
   },
+  "extraKnownMarketplaces": {
+    "cc-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "kenryu42/cc-marketplace"
+      },
+      "autoUpdate": true
+    }
+  },
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
@@ -36,8 +45,14 @@
       ]
     },
     "filesystem": {
-      "denyRead": ["~/.ssh/**", "~/.config/gcloud/**"],
-      "denyWrite": ["~/.ssh/**", "~/.config/gcloud/**"]
+      "denyWrite": [
+        "~/.ssh/**",
+        "~/.config/gcloud/**"
+      ],
+      "denyRead": [
+        "~/.ssh/**",
+        "~/.config/gcloud/**"
+      ]
     }
   },
   "alwaysThinkingEnabled": true,
