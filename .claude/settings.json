@@ -18,7 +18,7 @@
       "Bash(find ./:*)"
     ]
   },
-  "model": "claude-sonnet-4-6",
+  "model": "claude-opus-4-6",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -30,10 +30,18 @@
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "network": {
-      "allowedDomains": ["api.github.com", "github.com"]
+      "allowedDomains": [
+        "api.github.com",
+        "github.com"
+      ]
+    },
+    "filesystem": {
+      "denyRead": ["~/.ssh/**", "~/.config/gcloud/**"],
+      "denyWrite": ["~/.ssh/**", "~/.config/gcloud/**"]
     }
   },
   "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754057532483
   }
