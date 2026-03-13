@@ -45,6 +45,10 @@
       ]
     },
     "filesystem": {
+      "allowWrite": [
+        "~/go/",
+        "~/.cache/go-build/"
+      ],
       "denyWrite": [
         "~/.ssh/**",
         "~/.config/gcloud/**"
@@ -56,6 +60,7 @@
     }
   },
   "alwaysThinkingEnabled": true,
+  "effortLevel": "medium",
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754057532483
