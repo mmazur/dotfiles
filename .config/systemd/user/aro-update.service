@@ -1,0 +1,6 @@
+[Unit]
+Description=Update aro
+
+[Service]
+WorkingDirectory=%h/aro
+ExecStart=%h/aro/update.sh
