@@ -49,10 +49,6 @@
         "~/go/",
         "~/.cache/go-build/"
       ],
-      "denyWrite": [
-        "~/.ssh/**",
-        "~/.config/gcloud/**"
-      ],
       "denyRead": [
         "~/.ssh/**",
         "~/.config/gcloud/**"
