@@ -58,6 +58,7 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "medium",
   "skipDangerousModePermissionPrompt": true,
+  "showClearContextOnPlanAccept": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754057532483
   }
