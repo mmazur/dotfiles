@@ -18,7 +18,6 @@
       "Bash(find ./:*)"
     ]
   },
-  "model": "claude-opus-4-6",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -57,9 +56,10 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "medium",
-  "skipDangerousModePermissionPrompt": true,
   "showClearContextOnPlanAccept": true,
+  "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754057532483
-  }
+  },
+  "model": "claude-opus-4-6"
 }
