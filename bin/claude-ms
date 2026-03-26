@@ -7,4 +7,13 @@ unset ANTHROPIC_VERTEX_PROJECT_ID
 export ANTHROPIC_BASE_URL="http://0.0.0.0:4000"
 export ANTHROPIC_API_KEY="sk-anything" # LiteLLM just needs a placeholder
 
+export ANTHROPIC_MODEL="claude-opus-4-6"
+export ANTHROPIC_SMALL_FAST_MODEL="claude-haiku-4-5"
+
+export ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4-6"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
+
+#export DISABLE_NON_ESSENTIAL_MODEL_CALLS="1"
+#export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
+
 claude $*
