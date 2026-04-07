@@ -46,7 +46,8 @@
     "filesystem": {
       "allowWrite": [
         "~/go/",
-        "~/.cache/go-build/"
+        "~/.cache/go-build/",
+	"~/.azure/"
       ],
       "denyRead": [
         "~/.ssh/**",
