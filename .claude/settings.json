@@ -18,12 +18,14 @@
       "Bash(find ./:*)"
     ]
   },
+  "model": "claude-opus-4-6",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "safety-net@cc-marketplace": true
+    "safety-net@cc-marketplace": true,
+    "ops@aro-plugins": true
   },
   "extraKnownMarketplaces": {
     "cc-marketplace": {
@@ -32,6 +34,12 @@
         "repo": "kenryu42/cc-marketplace"
       },
       "autoUpdate": true
+    },
+    "aro-plugins": {
+      "source": {
+        "source": "directory",
+        "path": "~/aro/plugins"
+      }
     }
   },
   "sandbox": {
@@ -47,7 +55,7 @@
       "allowWrite": [
         "~/go/",
         "~/.cache/go-build/",
-	"~/.azure/"
+        "~/work/claude"
       ],
       "denyRead": [
         "~/.ssh/**",
@@ -61,6 +69,5 @@
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754057532483
-  },
-  "model": "claude-opus-4-6"
+  }
 }
