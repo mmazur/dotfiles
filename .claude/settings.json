@@ -39,7 +39,8 @@
       "source": {
         "source": "directory",
         "path": "~/aro/plugins"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "sandbox": {
