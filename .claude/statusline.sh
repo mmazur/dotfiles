@@ -14,7 +14,7 @@ for f in \
     "${project_dir:+$project_dir/.claude/settings.local.json}" \
     /etc/claude-code/managed-settings.json; do
     [ -z "$f" ] && continue
-    val=$(jq -r '.sandbox.enabled // empty' "$f" 2>/dev/null)
+    val=$(jq -r '.sandbox.enabled | if . == null then "" else tostring end' "$f" 2>/dev/null)
     [ "$val" = "true" ] && sandbox="ON"
     [ "$val" = "false" ] && sandbox="OFF"
 done
