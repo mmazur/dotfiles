@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+while true; do
+    ssh "$@"
+    code=$?
+
+    if [ "$code" -ne 255 ]; then
+        exit "$code"
+    fi
+
+    echo ""
+    echo "--- SSH connection lost (exit code 255) ---"
+
+    while true; do
+        echo ""
+        echo "  x) eXit (close terminal)"
+        echo "  r) Reconnect (ssh $*)"
+        echo ""
+        read -rp "Choice: " choice
+        case "$choice" in
+            x|X) exit 255 ;;
+            r|R) break ;;
+            *) echo "Please enter x or r." ;;
+        esac
+    done
+
+    echo ""
+    echo "Reconnecting..."
+    echo ""
+done
