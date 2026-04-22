@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+trap 'exit 130' INT
+
 while true; do
     ssh "$@"
     code=$?
@@ -16,7 +18,7 @@ while true; do
         echo "  x) eXit (close terminal)"
         echo "  r) Reconnect (ssh $*)"
         echo ""
-        read -rp "Choice: " choice
+        read -rp "Choice: " choice || exit 1
         case "$choice" in
             x|X) exit 255 ;;
             r|R) break ;;
