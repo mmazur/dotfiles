@@ -51,8 +51,4 @@ fi
 # Sandbox indicator
 [ -n "$sandbox" ] && echo -n " | Sandbox: $sandbox"
 
-# Safety net
-safety_net=$(bunx cc-safety-net --statusline 2>/dev/null || true)
-[ -n "$safety_net" ] && echo -n " | $safety_net"
-
 echo

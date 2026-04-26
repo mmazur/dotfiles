@@ -24,17 +24,9 @@
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "safety-net@cc-marketplace": true,
     "ops@aro-plugins": true
   },
   "extraKnownMarketplaces": {
-    "cc-marketplace": {
-      "source": {
-        "source": "github",
-        "repo": "kenryu42/cc-marketplace"
-      },
-      "autoUpdate": true
-    },
     "aro-plugins": {
       "source": {
         "source": "directory",
