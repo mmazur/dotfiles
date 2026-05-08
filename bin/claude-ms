@@ -4,7 +4,7 @@ unset CLAUDE_CODE_USE_VERTEX
 unset CLOUD_ML_REGION
 unset ANTHROPIC_VERTEX_PROJECT_ID
 
-export ANTHROPIC_BASE_URL="http://0.0.0.0:4000"
+export ANTHROPIC_BASE_URL="https://copilot.maersk.blusz.cz"
 export ANTHROPIC_API_KEY="sk-anything" # LiteLLM just needs a placeholder
 
 export ANTHROPIC_MODEL="claude-opus-4-6"
