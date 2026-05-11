@@ -7,13 +7,15 @@ unset ANTHROPIC_VERTEX_PROJECT_ID
 export ANTHROPIC_BASE_URL="https://copilot.maersk.blusz.cz"
 export ANTHROPIC_API_KEY="sk-anything" # LiteLLM just needs a placeholder
 
-export ANTHROPIC_MODEL="claude-opus-4-6"
+#export ANTHROPIC_MODEL="claude-opus-4-6"
+# I'm doing model name mapping, otherwise these would need to be -4.5 and -4.6
 export ANTHROPIC_SMALL_FAST_MODEL="claude-haiku-4-5"
 
 export ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4-6"
 export ANTHROPIC_DEFAULT_HAIKU_MODEL="claude-haiku-4-5"
 
-export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
+export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1
+#export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
 
 #export DISABLE_NON_ESSENTIAL_MODEL_CALLS="1"
 #export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
