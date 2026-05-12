@@ -18,7 +18,7 @@
       "Bash(find ./:*)"
     ]
   },
-  "model": "claude-sonnet-4-6",
+  "model": "claude-opus-4-6",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
