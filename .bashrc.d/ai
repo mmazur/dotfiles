@@ -1,6 +1,0 @@
-export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
-
-alias c=claude
-alias cms=claude-ms
-
-alias skills="npx skills@latest"

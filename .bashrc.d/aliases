@@ -1,0 +1,10 @@
+alias t="tmux attach"
+
+alias cc="claude"
+alias co="copilot"
+alias cx="codex"
+
+alias caro="cd ~/aro; claude"
+alias car="cd ~/aro; claude"
+
+alias skills="npx skills@latest"
