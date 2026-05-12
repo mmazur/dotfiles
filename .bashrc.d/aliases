@@ -1,3 +1,5 @@
+alias vim=nvim
+
 alias t="tmux attach"
 
 alias cc="claude"
