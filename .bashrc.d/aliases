@@ -8,3 +8,6 @@ alias caro="cd ~/aro; claude"
 alias car="cd ~/aro; claude"
 
 alias skills="npx skills@latest"
+
+alias xit="exit"
+alias ezit="exit"
