@@ -2,10 +2,12 @@ source $HOME/.git-prompt.sh
 
 GIT_PS1_SHOWCOLORHINTS=yes
 
+MYHOSTNAME=$HOSTNAME
+
 if [ "$HOSTNAME" = "mmazur-thinkpadt14gen4.rmtpl.csb" ]; then
 	MYHOSTNAME=t14g4
-else
-	MYHOSTNAME=$HOSTNAME
+elif [ "$HOSTNAME" = "mmazur-kvm.rmtpl.csb" ]; then
+	MYHOSTNAME=csb
 fi
 
 [ -z "$USER" ] && export USER=$USERNAME
