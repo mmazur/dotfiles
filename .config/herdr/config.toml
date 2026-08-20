@@ -1,16 +1,27 @@
+onboarding = false
+
+[ui]
+prompt_new_tab_name = false
+
+[experimental]
+pane_history = true
+
 [ui.sound]
 enabled = false
 
 [keys]
-switch_tab = "alt+1..9"
-new_tab = "alt+t"
-next_tab = "alt+f"
-previous_tab = "alt+s"
-detach = "alt+d"
-move_tab_previous = "alt+["
-move_tab_next = "alt+]"
-rename_tab = "alt+n"
-rename_workspace = "alt+shift+n"
-goto = "alt+e"
-toggle_sidebar = "alt+shift+e"
-
+switch_tab = ["alt+1..9", "ctrl+1..9"]
+new_tab = ["alt+t", "ctrl+t"]
+next_tab = ["alt+f", "ctrl+f"]
+previous_tab = ["alt+s", "ctrl+s"]
+detach = ["alt+d", "ctrl+d"]
+move_tab_previous = ["alt+[", "ctrl+["]
+move_tab_next = ["alt+]", "ctrl+]"]
+rename_tab = ["alt+n", "prefix+n"]
+rename_workspace = ["alt+shift+n", "prefix+shift+n"]
+goto = ["alt+e", "ctrl+e"]
+toggle_sidebar = ["alt+shift+e", "alt+a", "ctrl+a"]
+close_tab = "prefix+r"
+close_workspace = "prefix+shift+r"
+workspace_picker = ["alt+w", "ctrl+w"]
+new_workspace = ["ctrl+n"]
