@@ -11,7 +11,6 @@ enabled = false
 
 [keys]
 switch_tab = ["alt+1..9", "ctrl+1..9"]
-new_tab = ["alt+t", "ctrl+t"]
 next_tab = ["alt+f", "ctrl+f"]
 previous_tab = ["alt+s", "ctrl+s"]
 detach = ["alt+d", "ctrl+d"]
@@ -25,3 +24,15 @@ close_tab = "prefix+r"
 close_workspace = "prefix+shift+r"
 workspace_picker = ["alt+w", "ctrl+w"]
 new_workspace = ["ctrl+n"]
+
+[[keys.command]]
+key = ["alt+m", "ctrl+m"]
+type = "popup"
+command = "bash -c 'wid=$(herdr workspace list | jq -r \".result.workspaces[] | [.workspace_id, .label] | @tsv\" | grep -v \"^$HERDR_ACTIVE_WORKSPACE_ID\\b\" | fzf --with-nth=2 --delimiter=\"\\t\" --prompt=\"Move pane to workspace: \" | cut -f1); [ -z \"$wid\" ] && exit; herdr pane move \"$HERDR_ACTIVE_PANE_ID\" --new-tab --workspace \"$wid\"'"
+description = "move pane to another workspace"
+
+[[keys.command]]
+key = ["alt+t", "ctrl+t"]
+type = "shell"
+command = "bash -c 'pid=$(herdr tab create --workspace \"$HERDR_ACTIVE_WORKSPACE_ID\" --focus | jq -r \".result.root_pane.pane_id\"); herdr pane input --pane \"$pid\" --right-click pane'"
+description = "new tab with right-click passthrough"
