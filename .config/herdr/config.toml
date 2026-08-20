@@ -36,3 +36,9 @@ key = ["alt+t", "ctrl+t"]
 type = "shell"
 command = "bash -c 'pid=$(herdr tab create --workspace \"$HERDR_ACTIVE_WORKSPACE_ID\" --focus | jq -r \".result.root_pane.pane_id\"); herdr pane input --pane \"$pid\" --right-click pane'"
 description = "new tab with right-click passthrough"
+
+[[keys.command]]
+key = "ctrl+r"
+type = "shell"
+command = "true"
+description = "disable ctrl+r"
