@@ -38,7 +38,7 @@ command = "bash -c 'pid=$(herdr tab create --workspace \"$HERDR_ACTIVE_WORKSPACE
 description = "new tab with right-click passthrough"
 
 [[keys.command]]
-key = "ctrl+r"
+key = "ctrl+alt+r"
 type = "shell"
 command = "true"
 description = "disable ctrl+r"
