@@ -1,4 +1,5 @@
 alias t="tmux attach"
+alias h="herdr"
 
 alias cc="claude"
 alias co="copilot"
