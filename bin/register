@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ ${HERDR_ENV:-} != 1 || -z ${HERDR_PANE_ID:-} ]]; then
+  echo "register must run inside a Herdr pane" >&2
+  exit 1
+fi
+
+process_info=$(herdr pane process-info --current)
+pane_id=$(jq -er '.result.process_info.pane_id' <<<"$process_info")
+copilot_process_count=$(jq -er '
+  def copilot_process:
+    [
+      .name?,
+      .argv0?,
+      ((.argv? // [])[0]?)
+    ]
+    | map(select(type == "string") | split("/") | last | ascii_downcase)
+    | index("copilot") != null;
+
+  [.result.process_info.foreground_processes[] | select(copilot_process)] | length
+' <<<"$process_info")
+
+if [[ $copilot_process_count != 1 ]]; then
+  echo "expected exactly one foreground Copilot process, found $copilot_process_count" >&2
+  exit 1
+fi
+
+mapfile -t candidates < <(
+  jq -er '
+    def session_id($flag):
+      [
+        range(1; length) as $index
+        | .[$index] as $argument
+        | if $argument == $flag then .[$index + 1] // empty
+          elif ($argument | startswith($flag + "=")) then $argument | ltrimstr($flag + "=")
+          else empty
+          end
+      ]
+      | map(select(length > 0))
+      | first;
+
+    def copilot_process:
+      [
+        .name?,
+        .argv0?,
+        ((.argv? // [])[0]?)
+      ]
+      | map(select(type == "string") | split("/") | last | ascii_downcase)
+      | index("copilot") != null;
+
+    [
+      .result.process_info.foreground_processes[]
+      | select(copilot_process)
+      | (.argv // [])
+      | (session_id("--resume") // session_id("--session"))
+      | select(. != null)
+    ]
+    | .[]
+  ' <<<"$process_info"
+)
+
+case ${#candidates[@]} in
+  0)
+    echo "no resumable Copilot session found in the foreground process; start Copilot with --resume or --session" >&2
+    exit 1
+    ;;
+  1)
+    ;;
+  *)
+    echo "multiple resumable Copilot session arguments found in the foreground process" >&2
+    exit 1
+    ;;
+esac
+
+session_id=${candidates[0]}
+herdr pane report-agent-session "$pane_id" \
+  --source herdr:copilot \
+  --agent copilot \
+  --agent-session-id "$session_id"
+
+echo "registered Copilot session $session_id for $pane_id"
