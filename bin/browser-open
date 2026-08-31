@@ -1,8 +1,22 @@
 #!/bin/sh
-case "$1" in
-	https://aka.ms*|https://ra.ev2portal.*|https://teams.cloud.microsoft*|https://dev.azure.com*|https://msazure.visualstudio.com*)
-		exec edge "$@"
-		;;
-esac
-exec google-chrome-stable "$@"
 
+# Add domains here (one per line, no https://, wildcards allowed)
+EDGE_DOMAINS="
+aka.ms
+eng.ms
+teams.cloud.microsoft
+dev.azure.com
+msazure.visualstudio.com
+ra.ev2portal.*
+portal.microsofticm.com
+"
+
+for domain in $EDGE_DOMAINS; do
+	case "$1" in
+		https://$domain|https://$domain/*)
+			exec edge "$@"
+			;;
+	esac
+done
+
+exec google-chrome-stable "$@"
