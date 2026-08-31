@@ -1,6 +1,6 @@
 #!/bin/sh
 case "$1" in
-	https://aka.ms/*|https://ra.ev2portal.*|https://teams.cloud.microsoft*|https://dev.azure.com*)
+	https://aka.ms*|https://ra.ev2portal.*|https://teams.cloud.microsoft*|https://dev.azure.com*|https://msazure.visualstudio.com*)
 		exec edge "$@"
 		;;
 esac
