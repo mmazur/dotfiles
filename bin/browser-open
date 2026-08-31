@@ -9,6 +9,7 @@ dev.azure.com
 msazure.visualstudio.com
 ra.ev2portal.*
 portal.microsofticm.com
+microsoft.sharepoint.com
 "
 
 for domain in $EDGE_DOMAINS; do
