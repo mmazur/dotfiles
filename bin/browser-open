@@ -5,6 +5,7 @@ EDGE_DOMAINS="
 aka.ms
 eng.ms
 teams.cloud.microsoft
+teams.microsoft.com
 dev.azure.com
 msazure.visualstudio.com
 ra.ev2portal.*
