@@ -1,0 +1,39 @@
+#!/bin/bash
+
+switch_center() {
+	echo "Center"
+	Monitor_switch 2 HDMI-1 0x11 HDMI-2 0x12
+}
+
+switch_left() {
+	echo "Left"
+	Monitor_switch 15 DisplayPort-1 0x0f HDMI-1 0x11
+}
+
+switch_right() {
+	echo "Right"
+	Monitor_switch 16 DisplayPort-1 0x0f HDMI-1 0x11
+}
+
+case "$1" in
+	l|left)
+		switch_left
+		;;
+	r|right)
+		switch_right
+		;;
+	c|center|m|middle)
+		switch_center
+		;;
+	"")
+		switch_center
+		sleep 0.5
+		switch_left
+		sleep 0.5
+		switch_right
+		;;
+	*)
+		echo "Usage: $(basename "$0") [l|left|r|right|c|center|m|middle]" >&2
+		exit 1
+		;;
+esac

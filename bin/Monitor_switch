@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Monitor switching logic
+# Usage: monitor_switch <bus> <input1_name> <input1_id> <input2_name> <input2_id>
+
+BUS="$1"
+INPUT1_NAME="$2"
+INPUT1_ID="$3"
+INPUT2_NAME="$4"
+INPUT2_ID="$5"
+
+if [ $# -ne 5 ]; then
+    echo "Usage: $0 <bus> <input1_name> <input1_id> <input2_name> <input2_id>"
+    echo "Example: $0 2 HDMI-1 0x11 HDMI-2 0x12"
+    exit 1
+fi
+
+CURRENT=$(sudo ddcutil getvcp 0x60 --bus "$BUS")
+if [ "$?" != "0" ]; then
+	echo "Problem with detecting input: $CURRENT"
+	echo "Trying again"
+	CURRENT=$(sudo ddcutil getvcp 0x60 --bus "$BUS")
+fi
+
+if echo "$CURRENT" | grep -q "$INPUT1_NAME"; then
+    NEWSOURCE="$INPUT2_ID"
+    NEWNAME="$INPUT2_NAME"
+elif echo "$CURRENT" | grep -q "$INPUT2_NAME"; then
+    NEWSOURCE="$INPUT1_ID"
+    NEWNAME="$INPUT1_NAME"
+else
+    echo "Current source is not $INPUT1_NAME or $INPUT2_NAME, it's $CURRENT on $BUS."
+    exit 1
+fi
+
+sudo ddcutil setvcp 0x60 "$NEWSOURCE" --bus "$BUS"
+echo "Switched input to $NEWNAME ($NEWSOURCE)"
