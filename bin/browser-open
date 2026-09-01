@@ -13,9 +13,25 @@ portal.microsofticm.com
 microsoft.sharepoint.com
 "
 
+# Add URL prefixes here (domain + path prefix, no https://). Matches anything
+# starting with this prefix, e.g. "dataexplorer.azure.com/clusters/hcp-prod-"
+EDGE_PREFIXES="
+dataexplorer.azure.com/clusters/hcp-prod-
+dataexplorer.azure.com/clusters/hcp-stg-
+dataexplorer.azure.com/clusters/hcp-int-
+"
+
 for domain in $EDGE_DOMAINS; do
 	case "$1" in
 		https://$domain|https://$domain/*)
+			exec edge "$@"
+			;;
+	esac
+done
+
+for prefix in $EDGE_PREFIXES; do
+	case "$1" in
+		https://$prefix*)
 			exec edge "$@"
 			;;
 	esac
