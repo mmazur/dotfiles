@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# There's a matching ../.local/share/applications/browser-open.desktop
+
 # Add domains here (one per line, no https://, wildcards allowed)
 EDGE_DOMAINS="
 aka.ms
