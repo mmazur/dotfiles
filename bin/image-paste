@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+output="$(mktemp /tmp/clipboard-paste.XXXXXXXX.png)"
+
+if ! wl-paste --type image/png >"$output" || [[ ! -s "$output" ]]; then
+  rm -f "$output"
+  printf 'image-paste: no PNG image is available on the clipboard\n' >&2
+  exit 1
+fi
+
+printf '%s\n' "$output"
