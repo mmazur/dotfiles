@@ -30,7 +30,9 @@ elif echo "$CURRENT" | grep -q "$INPUT2_NAME"; then
     NEWNAME="$INPUT1_NAME"
 else
     echo "Current source is not $INPUT1_NAME or $INPUT2_NAME, it's $CURRENT on $BUS."
-    exit 1
+    echo "Switching to $INPUT_NAME1"
+    NEWSOURCE="$INPUT1_ID"
+    NEWNAME="$INPUT1_NAME"
 fi
 
 sudo ddcutil setvcp 0x60 "$NEWSOURCE" --bus "$BUS"
