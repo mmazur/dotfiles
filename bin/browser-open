@@ -13,6 +13,7 @@ msazure.visualstudio.com
 ra.ev2portal.*
 portal.microsofticm.com
 microsoft.sharepoint.com
+myaccess.microsoft.com
 "
 
 # Add URL prefixes here (domain + path prefix, no https://). Matches anything
