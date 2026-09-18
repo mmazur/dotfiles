@@ -9,11 +9,13 @@ eng.ms
 teams.cloud.microsoft
 teams.microsoft.com
 dev.azure.com
-msazure.visualstudio.com
+*.visualstudio.com
 ra.ev2portal.*
-portal.microsofticm.com
+*.microsofticm.com
 microsoft.sharepoint.com
-myaccess.microsoft.com
+*.microsoft.com
+*.windows.net
+*.azurefd.net
 "
 
 # Add URL prefixes here (domain + path prefix, no https://). Matches anything
