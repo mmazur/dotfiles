@@ -1,5 +1,8 @@
 onboarding = false
 
+[theme.custom]
+sidebar_bg = "#0087ff"
+
 [ui]
 prompt_new_tab_name = false
 
