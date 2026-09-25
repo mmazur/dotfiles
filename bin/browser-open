@@ -16,6 +16,7 @@ microsoft.sharepoint.com
 *.microsoft.com
 *.windows.net
 *.azurefd.net
+*.cloud.microsoft
 "
 
 # Add URL prefixes here (domain + path prefix, no https://). Matches anything
@@ -24,6 +25,7 @@ EDGE_PREFIXES="
 dataexplorer.azure.com/clusters/hcp-prod-
 dataexplorer.azure.com/clusters/hcp-stg-
 dataexplorer.azure.com/clusters/hcp-int-
+lionrock-
 "
 
 for domain in $EDGE_DOMAINS; do
