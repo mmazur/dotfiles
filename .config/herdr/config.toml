@@ -12,6 +12,9 @@ pane_history = true
 [ui.sound]
 enabled = false
 
+[session]
+startup_per_agent_delay_ms = 1500
+
 [keys]
 # herdr doesn't handle alt+[] (tmux does though; todo)
 move_tab_previous = ["alt+[", "alt+left"]
