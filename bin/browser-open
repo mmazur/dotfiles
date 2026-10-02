@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+shopt -s extglob
 
 # There's a matching ../.local/share/applications/browser-open.desktop
 
@@ -30,7 +31,7 @@ lionrock-
 
 for domain in $EDGE_DOMAINS; do
 	case "$1" in
-		https://$domain|https://$domain/*)
+		http?(s)://$domain|http?(s)://$domain/*)
 			exec edge "$@"
 			;;
 	esac
@@ -38,7 +39,7 @@ done
 
 for prefix in $EDGE_PREFIXES; do
 	case "$1" in
-		https://$prefix*)
+		http?(s)://$prefix*)
 			exec edge "$@"
 			;;
 	esac
