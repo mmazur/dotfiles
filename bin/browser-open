@@ -18,6 +18,9 @@ microsoft.sharepoint.com
 *.windows.net
 *.azurefd.net
 *.cloud.microsoft
+arohcp-int*.grafana.azure.com
+arohcp-stg-*.grafana.azure.com
+arohcp-prod-*.grafana.azure.com
 "
 
 # Add URL prefixes here (domain + path prefix, no https://). Matches anything
