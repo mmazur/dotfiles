@@ -21,14 +21,12 @@ microsoft.sharepoint.com
 arohcp-int*.grafana.azure.com
 arohcp-stg-*.grafana.azure.com
 arohcp-prod-*.grafana.azure.com
+dataexplorer.azure.com
 "
 
 # Add URL prefixes here (domain + path prefix, no https://). Matches anything
 # starting with this prefix, e.g. "dataexplorer.azure.com/clusters/hcp-prod-"
 EDGE_PREFIXES="
-dataexplorer.azure.com/clusters/hcp-prod-
-dataexplorer.azure.com/clusters/hcp-stg-
-dataexplorer.azure.com/clusters/hcp-int-
 lionrock-
 "
 
