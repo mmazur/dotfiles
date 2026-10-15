@@ -3,6 +3,12 @@ shopt -s extglob
 
 # There's a matching ../.local/share/applications/browser-open.desktop
 
+# Add Chrome URL prefixes here (domain + path prefix, no https://).
+# These take priority over all Edge rules.
+CHROME_PREFIXES="
+dataexplorer.azure.com/clusters/hcp-dev
+"
+
 # Add domains here (one per line, no https://, wildcards allowed)
 EDGE_DOMAINS="
 aka.ms
@@ -29,6 +35,14 @@ dataexplorer.azure.com
 EDGE_PREFIXES="
 lionrock-
 "
+
+for prefix in $CHROME_PREFIXES; do
+	case "$1" in
+		http?(s)://$prefix*)
+			exec google-chrome-stable "$@"
+			;;
+	esac
+done
 
 for domain in $EDGE_DOMAINS; do
 	case "$1" in
