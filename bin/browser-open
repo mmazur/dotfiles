@@ -29,6 +29,7 @@ arohcp-stg-*.grafana.azure.com
 arohcp-prod-*.grafana.azure.com
 dataexplorer.azure.com
 *.sharepoint.com
+*engsys.com
 "
 
 # Add URL prefixes here (domain + path prefix, no https://). Matches anything
